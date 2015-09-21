@@ -110,8 +110,8 @@ class App
      */
     public function execute($n, $divider)
     {
-        if (((int)$n != $n) || ((int)$divider != $divider)) {
-            throw new \InvalidArgumentException("Numbers isn't integer");
+        if (((int)$n != $n) || ((int)$divider != $divider) || $n < 1 || $divider < 1) {
+            throw new \InvalidArgumentException("wrong input params");
         }
         if ($n >= $divider) {
             return true;
